@@ -11,6 +11,8 @@
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
+        <io.projectreactor.version>2020.0.13</io.projectreactor.version>
+        <ch.qos.logback.version>1.2.7</ch.qos.logback.version>
     </properties>
 
     <dependencyManagement>
@@ -18,7 +20,14 @@
             <dependency>
                 <groupId>io.projectreactor</groupId>
                 <artifactId>reactor-bom</artifactId>
-                <version>2020.0.13</version>
+                <version>${io.projectreactor.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>ch.qos.logback</groupId>
+                <artifactId>logback-parent</artifactId>
+                <version>${ch.qos.logback.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -29,6 +38,10 @@
         <dependency>
             <groupId>io.projectreactor</groupId>
             <artifactId>reactor-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
         </dependency>
     </dependencies>
 
