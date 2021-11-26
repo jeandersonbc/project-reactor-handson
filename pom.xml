@@ -13,6 +13,7 @@
         <maven.compiler.target>17</maven.compiler.target>
         <io.projectreactor.version>2020.0.13</io.projectreactor.version>
         <ch.qos.logback.version>1.2.7</ch.qos.logback.version>
+        <org.junit.version>5.8.1</org.junit.version>
     </properties>
 
     <dependencyManagement>
@@ -21,6 +22,13 @@
                 <groupId>io.projectreactor</groupId>
                 <artifactId>reactor-bom</artifactId>
                 <version>${io.projectreactor.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.junit</groupId>
+                <artifactId>junit-bom</artifactId>
+                <version>${org.junit.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -40,8 +48,19 @@
             <artifactId>reactor-core</artifactId>
         </dependency>
         <dependency>
+            <groupId>io.projectreactor</groupId>
+            <artifactId>reactor-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
+            <scope>runtime</scope>
         </dependency>
     </dependencies>
 
