@@ -34,8 +34,6 @@ public class FundamentalReactiveTypesMain {
   }
 
   private static Consumer<String> getStringConsumer() {
-    return name -> {
-      System.out.printf("Current value: %s%n", name);
-    };
+    return name -> System.out.printf("Current value: %s%n", name);
   }
 }
